@@ -22,7 +22,7 @@ export class HeroService {
     // TODO: send the message _after_ fetching the heroes
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
-        tap(_ => this.log('pobrałem herosiów')),
+        tap(_ => this.log(`pobrałem herosiów`)),
         catchError(this.handleError<Hero[]>('zaciągnięcie herosów', []))
       );
   }
